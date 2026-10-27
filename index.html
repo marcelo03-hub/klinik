@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumah Sehat Herbal Adz-Dzikro - Pengobatan Sunnah & Herbal Alami</title>
+    <!-- Favicon Logo Resmi -->
+    <link rel="icon" type="image/png" href="assets/img/logo-adz-dzikro.png">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Amiri (Arabic style for headers) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#0d5c2e', // Hijau tua khas banner
+                            lightgreen: '#15803d',
+                            red: '#be123c',   // Merah khas banner
+                            darkred: '#881337',
+                            gold: '#f59e0b',  // Kuning emas aksen teks
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        arabic: ['Amiri', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .arabic-text {
+            font-family: 'Amiri', serif;
+        }
+        /* Custom Red-Green Gradient Hero Background based on Banner */
+        .hero-banner-bg {
+            background: linear-gradient(135deg, rgba(14, 116, 144, 0.15) 0%, rgba(13, 92, 46, 0.95) 45%, rgba(190, 18, 60, 0.92) 100%), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+        }
+        .banner-red-bg {
+            background: linear-gradient(180deg, #9f1239 0%, #be123c 50%, #881337 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md border-b-4 border-brand-green">
+        <!-- Top Bar Info - Merah Banner -->
+        <div class="bg-brand-red text-white text-xs py-2 px-4 hidden md:block">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-6">
+                    <span class="flex items-center gap-2"><i class="fas fa-clock text-brand-gold"></i> Buka Setiap Hari (Ikhwan: 09.00-21.00 | Akhwat: 09.00-17.00 WIB)</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-brand-gold"></i> Bukit Cimanggu City (BCC), Kota Bogor</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://www.instagram.com/rsadzikro?exln=NmZ6MWlveWg2d2h3" target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold transition flex items-center gap-1"><i class="fab fa-instagram"></i> @rsadzikro</a>
+                    <span class="text-rose-300">|</span>
+                    <a href="https://wa.me/6285921194645" target="_blank" class="hover:text-brand-gold transition"><i class="fab fa-whatsapp me-1"></i> 0859-2119-4645</a>
+                    <span class="text-rose-300">|</span>
+                    <span class="arabic-text text-sm text-brand-gold font-bold">الشفاء من الله</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#beranda" class="flex items-center space-x-3 group">
+                <img src="assets/img/logo-adz-dzikro.png" alt="Logo Rumah Sehat Herbal Adz-Dzikro" class="w-12 h-12 rounded-full object-contain shadow-md border-2 border-brand-gold group-hover:scale-105 transition-transform duration-300 bg-black">
+                <div>
+                    <span class="text-2xl font-black tracking-tight text-brand-green block leading-tight group-hover:text-brand-lightgreen transition">Adz-Dzikro</span>
+                    <span class="text-[10px] sm:text-xs font-bold text-brand-red tracking-wider uppercase block">RUMAH SEHAT HERBAL</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-8 font-semibold text-gray-700">
+                <a href="#beranda" class="hover:text-brand-red transition">Beranda</a>
+                <a href="#tentang" class="hover:text-brand-red transition">Tentang Kami</a>
+                <a href="#layanan" class="hover:text-brand-red transition">12 Layanan Terapi</a>
+                <a href="#produk" class="hover:text-brand-red transition">Produk Herbal</a>
+                <a href="#testimoni" class="hover:text-brand-red transition">Testimoni</a>
+                <a href="#kontak" class="hover:text-brand-red transition">Kontak</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#booking" class="bg-brand-red hover:bg-brand-darkred text-white font-bold px-6 py-2.5 rounded-full transition duration-300 shadow-lg flex items-center gap-2 border border-rose-400">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                    <span>Konsultasi Gratis</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-gray-700 hover:text-brand-red focus:outline-none" aria-label="Menu navigasi">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#beranda" class="mobile-link block py-2 text-gray-700 hover:text-brand-red font-medium border-b border-gray-100">Beranda</a>
+            <a href="#tentang" class="mobile-link block py-2 text-gray-700 hover:text-brand-red font-medium border-b border-gray-100">Tentang Kami</a>
+            <a href="#layanan" class="mobile-link block py-2 text-gray-700 hover:text-brand-red font-medium border-b border-gray-100">12 Layanan Terapi</a>
+            <a href="#produk" class="mobile-link block py-2 text-gray-700 hover:text-brand-red font-medium border-b border-gray-100">Produk Herbal</a>
+            <a href="#testimoni" class="mobile-link block py-2 text-gray-700 hover:text-brand-red font-medium border-b border-gray-100">Testimoni</a>
+            <a href="#kontak" class="mobile-link block py-2 text-gray-700 hover:text-brand-red font-medium border-b border-gray-100">Kontak</a>
+            <a href="#booking" class="mobile-link mt-4 w-full bg-brand-red text-white text-center font-bold py-2.5 rounded-lg flex justify-center items-center gap-2">
+                <i class="fab fa-whatsapp"></i> Konsultasi WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section (TEMA BANNER HIJAU - MERAH - PUTIH) -->
+    <section id="beranda" class="hero-banner-bg text-white py-16 lg:py-28 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <!-- Badge Logo Lingkaran Banner -->
+            <div class="inline-flex items-center gap-3 bg-black/40 backdrop-blur-md border-2 border-brand-gold rounded-full pl-2 pr-6 py-1.5 mb-6 shadow-2xl">
+                <img src="assets/img/logo-adz-dzikro.png" alt="Logo Rumah Sehat Adz-Dzikro" class="w-10 h-10 rounded-full object-contain border border-brand-gold bg-black shadow">
+                <span class="text-xs sm:text-sm font-bold tracking-widest text-white uppercase">Rumah Sehat Herbal Adz-Dzikro</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-4 uppercase drop-shadow-md text-brand-gold">
+                SEHATKU <br class="sm:hidden"> LAFADZ DZIKIRKU
+            </h1>
+
+            <p class="arabic-text text-2xl md:text-3xl text-amber-200 mb-6 drop-shadow">
+                مَا أَنْزَلَ اللَّهُ دَاءً إِلَّا أَنْزَلَ لَهُ شِفَاءً
+            </p>
+
+            <p class="max-w-2xl mx-auto text-gray-100 text-base md:text-lg mb-8 leading-relaxed font-medium">
+                Melayani 12 Terapi Kesehatan Holistik dan Thibbun Nabawi untuk menyembuhkan penyakit, membersihkan racun tubuh, dan mengembalikan kebugaran stamina secara alami.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#booking" class="w-full sm:w-auto bg-brand-red hover:bg-brand-darkred text-white font-extrabold px-8 py-3.5 rounded-full shadow-xl transition duration-300 flex items-center justify-center gap-2 border border-rose-300">
+                    <i class="fas fa-calendar-alt"></i> Buat Janji Terapi
+                </a>
+                <a href="#layanan" class="w-full sm:w-auto bg-white text-brand-green hover:bg-gray-100 font-extrabold px-8 py-3.5 rounded-full shadow-lg transition duration-300 flex items-center justify-center gap-2">
+                    <i class="fas fa-notes-medical"></i> Lihat 12 Layanan Terapi
+                </a>
+            </div>
+
+            <!-- Jam Operasional Banner Info (Perpaduan Merah - Hijau - Putih) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mt-12 text-center">
+                <!-- Box Ikhwan -->
+                <div class="p-4 rounded-xl bg-white text-brand-green shadow-xl border-t-4 border-brand-green flex items-center justify-between px-6">
+                    <div class="text-left">
+                        <span class="text-xs text-brand-red font-black uppercase block">IKHWAN (PRIA)</span>
+                        <span class="text-lg font-extrabold text-gray-900">09.00 - 21.00 WIB</span>
+                    </div>
+                    <i class="fas fa-user-tie text-3xl text-brand-green"></i>
+                </div>
+                <!-- Box Status -->
+                <div class="p-4 rounded-xl bg-brand-gold text-brand-darkred flex items-center justify-center font-black text-sm sm:text-base shadow-xl border-2 border-white">
+                    <i class="fas fa-heart text-brand-red me-2"></i> LAYANAN TERAPI INSYA ALLAH SETIAP HARI
+                </div>
+                <!-- Box Akhwat -->
+                <div class="p-4 rounded-xl bg-white text-brand-red shadow-xl border-t-4 border-brand-red flex items-center justify-between px-6">
+                    <div class="text-left">
+                        <span class="text-xs text-brand-green font-black uppercase block">AKHWAT (WANITA)</span>
+                        <span class="text-lg font-extrabold text-gray-900">09.00 - 17.00 WIB</span>
+                    </div>
+                    <i class="fas fa-user-nurse text-3xl text-brand-red"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Putih & Hijau) -->
+    <section id="tentang" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative group">
+                    <div class="overflow-hidden rounded-2xl shadow-2xl border-4 border-brand-green bg-gray-100">
+                        <img src="assets/img/klinik-adz-dzikro.jpg" alt="Rumah Sehat Herbal Adz-Dzikro - Tampak Depan Klinik" class="w-full h-[450px] sm:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute top-4 left-4 bg-brand-green/95 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-lg border border-brand-gold flex items-center gap-2 backdrop-blur-sm">
+                        <i class="fas fa-clinic-medical text-brand-gold"></i>
+                        <span>Tampak Depan Rumah Sehat</span>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-brand-red text-white p-6 rounded-2xl shadow-2xl hidden sm:block max-w-xs border-2 border-brand-gold">
+                        <span class="text-xs uppercase text-brand-gold font-bold tracking-wider block">Slogan Utama</span>
+                        <span class="text-xl font-black text-white block mt-1">"SEHATKU LAFADZ DZIKIRKU"</span>
+                        <span class="text-xs text-rose-200 block mt-1">Melayani Lebih & Mengutamakan Pelayanan</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-brand-red font-extrabold uppercase tracking-wider text-sm block mb-2">Tentang Rumah Sehat</span>
+                    <h2 class="text-3xl font-black text-gray-900 mb-6 leading-tight">
+                        Pusat Pengobatan Thibbun Nabawi & Terapi Holistik
+                    </h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        <strong>Rumah Sehat Herbal Adz-Dzikro</strong> melayani kesehatan masyarakat melalui 12 metode terapi holistik serta pengobatan herbal alami sesuai syariat Islam.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Kami menjamin higienitas peralatan steril sekali pakai, terapis yang amanah dan berpengalaman, serta ruangan khusus yang terpisah antara pasien Ikhwan (Pria) & Akhwat (Wanita).
+                    </p>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-700 font-bold">
+                            <i class="fas fa-check-circle text-brand-green me-3 text-xl"></i> Ruangan & Terapis Terpisah (Ikhwan & Akhwat)
+                        </li>
+                        <li class="flex items-center text-gray-700 font-bold">
+                            <i class="fas fa-check-circle text-brand-green me-3 text-xl"></i> Peralatan Bekam Steril & Sekali Pakai
+                        </li>
+                        <li class="flex items-center text-gray-700 font-bold">
+                            <i class="fas fa-check-circle text-brand-green me-3 text-xl"></i> 12 Pilihan Terapi Kesehatan Lengkap
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section - TEMA MERAH & PUTIH (Sesuai Karpet Banner) -->
+    <section id="layanan" class="py-16 md:py-24 banner-red-bg text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="bg-brand-gold text-brand-darkred font-extrabold uppercase tracking-wider text-xs px-4 py-1.5 rounded-full inline-block mb-3 shadow">
+                    DAFTAR TERAPI RESMI
+                </span>
+                <h2 class="text-3xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight">
+                    12 Layanan Rumah Sehat Adz-Dzikro
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-4 rounded-full"></div>
+                <p class="text-rose-100 text-base">Seluruh layanan terapi kesehatan tradisional & Thibbun Nabawi sesuai pada daftar banner.</p>
+            </div>
+
+            <!-- 12 Grid Layanan (Desain Putih Bersih dengan Aksen Hijau Merah) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- 1. Al-Hijamah -->
+                <div class="bg-white text-gray-800 rounded-2xl p-6 shadow-xl hover:scale-105 transition-all duration-300 border-b-4 border-brand-green flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center text-brand-green text-2xl font-bold mb-4">
+                            <i class="fas fa-notes-medical"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-brand-green mb-2">AL-HIJAMAH</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Bekam basah sunnah pengeluaran darah kotor untuk membuang racun, melancarkan sirkulasi darah, dan pereda migrain.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-brand-red pt-3 border-t border-gray-100 uppercase">Ikhwan & Akhwat</span>
+                </div>
+
+                <!-- 2. Sebat Rotan -->
+                <div class="bg-white text-gray-800 rounded-2xl p-6 shadow-xl hover:scale-105 transition-all duration-300 border-b-4 border-brand-green flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-800 text-2xl font-bold mb-4">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-brand-green mb-2">SEBAT ROTAN</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Terapi stimulan otot dan syaraf menggunakan tepukan khusus rotan untuk mengurai sumbatan dan kekakuan otot.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-brand-red pt-3 border-t border-gray-100 uppercase">Ikhwan & Akhwat</span>
+                </div>
+
+                <!-- 3. Bekam Api -->
+                <div class="bg-white text-gray-800 rounded-2xl p-6 shadow-xl hover:scale-105 transition-all duration-300 border-b-4 border-brand-green flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-rose-100 rounded-2xl flex items-center justify-center text-brand-red text-2xl font-bold mb-4">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-brand-green mb-2">BEKAM API</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Terapi bekam dengan kehangatan efek vakum api untuk mengatasi masuk angin kronis, rematik, dan kram otot.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-brand-red pt-3 border-t border-gray-100 uppercase">Ikhwan & Akhwat</span>
+                </div>
+
+                <!-- 4. Akupuntur -->
+                <div class="bg-white text-gray-800 rounded-2xl p-6 shadow-xl hover:scale-105 transition-all duration-300 border-b-4 border-brand-green flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-teal-100 rounded-2xl flex items-center justify-center text-teal-700 text-2xl font-bold mb-4">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-brand-green mb-2">AKUPUNTUR</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Penusukan jarum steril halus pada titik meridian tubuh untuk menyeimbangkan energi tubuh dan meredakan syaraf terjepit.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-brand-red pt-3 border-t border-gray-100 uppercase">Ikhwan & Akhwat</span>
+                </div>
+
+                <!-- 5. Gurah -->
+                <div class="bg-white text-gray-800 rounded-2xl p-6 shadow-xl hover:scale-105 transition-all duration-300 border-b-4 border-brand-green flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center text-brand-green text-2xl font-bold mb-4">
+                            <i class="fas fa-head-side-mask"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-brand-green mb-2">GURAH</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Pembersihan dahak kotor dan lendir di rongga hidung & tenggorokan untuk mengobati sinusitis, flu, dan melapangkan napas.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-brand-red pt-3 border-t border-gray-100 uppercase">Ikhwan & Akhwat</span>
+                </div>
+
+                <!-- 6. Ear Candle -->
+                <div class="bg-white text-gray-800 rounded-2xl p-6 shadow-xl hover:scale-105 transition-all duration-300 border-b-4 border-brand-green flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 text-2xl font-bold mb-4">
+                            <i class="fas fa-ear-listen"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-brand-green mb-2">EAR CANDLE</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Terapi pembersihan telinga menggunakan lilin hangat khusus untuk menyerap kotoran, meredakan vertigo & tinnitus.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-brand-red pt-3 border-t border-gray-100 uppercase">Ikhwan & Akhwat</span>
+                </div>
+
+                <!-- 7. Moksa -->
+                <div class="bg-white text-gray-800 rounded-2xl p-6 shadow-xl hover:scale-105 transition-all duration-300 border-b-4 border-brand-green flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-rose-100 rounded-2xl flex items-center justify-center text-brand-red text-2xl font-bold mb-4">
+                            <i class="fas fa-smog"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-brand-green mb-2">MOKSA</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Terapi penghangatan titik akupunktur dengan daun moxa kering untuk gangguan sistem pencernaan dan persendian.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-brand-red pt-3 border-t border-gray-100 uppercase">Ikhwan & Akhwat</span>
+                </div>
+
+                <!-- 8. Baby Massage -->
+                <div class="bg-white text-gray-800 rounded-2xl p-6 shadow-xl hover:scale-105 transition-all duration-300 border-b-4 border-brand-green flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl font-bold mb-4">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-brand-green mb-2">BABY MASSAGE</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Pijat lembut khusus bayi dan balita untuk membantu kualitas tidur, merangsang nafsu makan, & mengatasi perut kembung.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-brand-red pt-3 border-t border-gray-100 uppercase">Bayi & Anak-anak</span>
+                </div>
+
+                <!-- 9. Refleksi -->
+                <div class="bg-white text-gray-800 rounded-2xl p-6 shadow-xl hover:scale-105 transition-all duration-300 border-b-4 border-brand-green flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center text-brand-green text-2xl font-bold mb-4">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-brand-green mb-2">REFLEKSI</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Penekanan titik-titik syaraf telapak kaki & tangan untuk melepaskan kelelahan serta melancarkan metabolisme.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-brand-red pt-3 border-t border-gray-100 uppercase">Ikhwan & Akhwat</span>
+                </div>
+
+                <!-- 10. Quantum Kehamilan -->
+                <div class="bg-white text-gray-800 rounded-2xl p-6 shadow-xl hover:scale-105 transition-all duration-300 border-b-4 border-brand-green flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600 text-2xl font-bold mb-4">
+                            <i class="fas fa-person-pregnant"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-brand-green mb-2">QUANTUM KEHAMILAN</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Terapi holistik pereda kecemasan, pegal-pegal, serta persiapan fisik & psikologis ibu hamil menjelang persalinan.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-brand-red pt-3 border-t border-gray-100 uppercase">Khusus Akhwat / Ibu Hamil</span>
+                </div>
+
+                <!-- 11. PETEBE -->
+                <div class="bg-white text-gray-800 rounded-2xl p-6 shadow-xl hover:scale-105 transition-all duration-300 border-b-4 border-brand-green flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-700 text-2xl font-bold mb-4">
+                            <i class="fas fa-bone"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-brand-green mb-2">PETEBE</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Pembetulan Tulang Belakang (revisi tulang raga) untuk menyembuhkan nyeri pinggang, kecetit, & kelainan postur.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-brand-red pt-3 border-t border-gray-100 uppercase">Ikhwan & Akhwat</span>
+                </div>
+
+                <!-- 12. Ruqyah Syar'iyyah -->
+                <div class="bg-white text-gray-800 rounded-2xl p-6 shadow-xl hover:scale-105 transition-all duration-300 border-b-4 border-brand-green flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-brand-gold text-2xl font-bold mb-4">
+                            <i class="fas fa-book-quran"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-brand-green mb-2">RUQYAH SYAR'IYYAH</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Terapi bacaan ayat Al-Qur'an & doa sunnah untuk membantu ketenangan jiwa, trauma, insomnia, dan gangguan non-fisik.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-brand-red pt-3 border-t border-gray-100 uppercase">Sesuai Syariat Islam</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section (Putih & Hijau) -->
+    <section id="produk" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-red font-extrabold uppercase tracking-wider text-sm block mb-2">Produk & Obat Sunnah</span>
+                    <h2 class="text-3xl font-black text-brand-green">Apotek Herbal Adz-Dzikro</h2>
+                </div>
+                <!-- Category Filter -->
+                <div id="filter-container" class="mt-4 md:mt-0 flex flex-wrap gap-2">
+                    <button onclick="filterProducts(this, 'all')" class="filter-btn active bg-brand-green text-white px-4 py-2 rounded-lg text-sm font-bold transition shadow">Semua</button>
+                    <button onclick="filterProducts(this, 'madu')" class="filter-btn bg-gray-100 text-gray-700 hover:bg-emerald-100 px-4 py-2 rounded-lg text-sm font-bold transition">Madu & Zaitun</button>
+                    <button onclick="filterProducts(this, 'habbat')" class="filter-btn bg-gray-100 text-gray-700 hover:bg-emerald-100 px-4 py-2 rounded-lg text-sm font-bold transition">Habbatussauda</button>
+                    <button onclick="filterProducts(this, 'herbal')" class="filter-btn bg-gray-100 text-gray-700 hover:bg-emerald-100 px-4 py-2 rounded-lg text-sm font-bold transition">Ramuan Racikan</button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="product-grid">
+                <!-- Product 1: MADU AT-THOIFAH -->
+                <div class="product-card madu bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 bg-amber-50 relative overflow-hidden group">
+                            <img src="assets/img/produk-madu-at-thoifah.jpg" alt="Madu At-Thoifah" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-2 right-2 bg-brand-red text-white text-xs font-black px-3 py-1 rounded-full shadow">BEST SELLER</span>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-brand-green font-extrabold uppercase">Madu Herbal Murni</span>
+                            <h3 class="font-black text-gray-900 text-lg mb-1 uppercase tracking-tight">MADU AT-THOIFAH</h3>
+                            <p class="text-xs text-gray-500 mb-3 leading-relaxed">Madu murni racikan pilihan berkhasiat untuk menjaga imunitas, pemulihan stamina, dan terapi kesehatan.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                            <div>
+                                <span class="text-[10px] text-gray-400 block uppercase font-bold">Harga</span>
+                                <span class="font-black text-brand-red text-lg">Rp 130.000</span>
+                            </div>
+                            <button onclick="orderWhatsApp('MADU AT-THOIFAH (Rp 130.000)')" class="bg-brand-green hover:bg-emerald-800 text-white px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow">
+                                <i class="fab fa-whatsapp"></i> Beli
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: DAUN DEWA -->
+                <div class="product-card herbal bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 bg-emerald-50 relative overflow-hidden group">
+                            <img src="assets/img/produk-daun-dewa.jpg" alt="Herbal Daun Dewa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-2 right-2 bg-emerald-600 text-white text-xs font-black px-3 py-1 rounded-full shadow">HERBAL ALAMI</span>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-brand-green font-extrabold uppercase">Ekstrak Herbal</span>
+                            <h3 class="font-black text-gray-900 text-lg mb-1 uppercase tracking-tight">DAUN DEWA</h3>
+                            <p class="text-xs text-gray-500 mb-3 leading-relaxed">Ekstrak daun dewa murni untuk melancarkan sirkulasi darah, membantu meredakan radang, dan detoksifikasi alami.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                            <div>
+                                <span class="text-[10px] text-gray-400 block uppercase font-bold">Harga</span>
+                                <span class="font-black text-brand-red text-lg">Rp 80.000</span>
+                            </div>
+                            <button onclick="orderWhatsApp('DAUN DEWA (Rp 80.000)')" class="bg-brand-green hover:bg-emerald-800 text-white px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow">
+                                <i class="fab fa-whatsapp"></i> Beli
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: HABAHSAUDA -->
+                <div class="product-card habbat bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 bg-amber-50 relative overflow-hidden group">
+                            <img src="assets/img/produk-habahsauda.jpg" alt="Habahsauda Habbatussauda" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-2 right-2 bg-brand-gold text-brand-darkred text-xs font-black px-3 py-1 rounded-full shadow">THIBBUN NABAWI</span>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-brand-green font-extrabold uppercase">Jintan Hitam</span>
+                            <h3 class="font-black text-gray-900 text-lg mb-1 uppercase tracking-tight">HABAHSAUDA</h3>
+                            <p class="text-xs text-gray-500 mb-3 leading-relaxed">Minyak & ekstrak jintan hitam murni kaya antioksidan untuk meningkatkan daya tahan tubuh sesuai anjuran sunnah.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                            <div>
+                                <span class="text-[10px] text-gray-400 block uppercase font-bold">Harga</span>
+                                <span class="font-black text-brand-red text-lg">Rp 85.000</span>
+                            </div>
+                            <button onclick="orderWhatsApp('HABAHSAUDA (Rp 85.000)')" class="bg-brand-green hover:bg-emerald-800 text-white px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow">
+                                <i class="fab fa-whatsapp"></i> Beli
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: FITANGIN -->
+                <div class="product-card herbal bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 bg-amber-50 relative overflow-hidden group">
+                            <img src="assets/img/produk-fitangin.jpg" alt="Fitangin Herbal" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-2 right-2 bg-brand-red text-white text-xs font-black px-3 py-1 rounded-full shadow">PEREDA MASUK ANGIN</span>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-brand-green font-extrabold uppercase">Ramuan Hangat</span>
+                            <h3 class="font-black text-gray-900 text-lg mb-1 uppercase tracking-tight">FITANGIN</h3>
+                            <p class="text-xs text-gray-500 mb-3 leading-relaxed">Formulasi herbal alami untuk meredakan gejala masuk angin, perut kembung, mual, meriang, dan pegal linu.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                            <div>
+                                <span class="text-[10px] text-gray-400 block uppercase font-bold">Harga</span>
+                                <span class="font-black text-brand-red text-lg">Rp 60.000</span>
+                            </div>
+                            <button onclick="orderWhatsApp('FITANGIN (Rp 60.000)')" class="bg-brand-green hover:bg-emerald-800 text-white px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow">
+                                <i class="fab fa-whatsapp"></i> Beli
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section (Aksen Hijau & Merah) -->
+    <section id="booking" class="py-16 md:py-24 bg-brand-green text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white text-gray-800 rounded-3xl p-6 sm:p-10 shadow-2xl border-4 border-brand-gold">
+                <div class="text-center mb-8">
+                    <span class="text-brand-red font-black uppercase tracking-wider text-xs block mb-1">RESERVASI TERAPI ONLINE</span>
+                    <h2 class="text-3xl font-black text-brand-green">Buat Janji Pengobatan</h2>
+                    <p class="text-gray-500 text-sm mt-1">Pilih jadwal terdekat agar Anda tidak perlu mengantre lama di Rumah Sehat.</p>
+                </div>
+
+                <form id="booking-form" onsubmit="submitBooking(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="nama" class="block text-xs font-bold text-gray-700 uppercase mb-1">Nama Lengkap Pasien</label>
+                            <input type="text" id="nama" required placeholder="Contoh: Ahmad Abdullah" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand-green outline-none">
+                        </div>
+                        <div>
+                            <label for="telepon" class="block text-xs font-bold text-gray-700 uppercase mb-1">Nomor WhatsApp</label>
+                            <input type="tel" id="telepon" required placeholder="0812345678xx" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand-green outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="layanan-pilihan" class="block text-xs font-bold text-gray-700 uppercase mb-1">Pilihan Terapi (12 Layanan)</label>
+                            <select id="layanan-pilihan" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand-green outline-none bg-white font-medium">
+                                <option value="">-- Pilih Layanan Terapi --</option>
+                                <option value="Al-Hijamah">Al-Hijamah (Bekam Basah)</option>
+                                <option value="Sebat Rotan">Sebat Rotan</option>
+                                <option value="Bekam Api">Bekam Api</option>
+                                <option value="Akupuntur">Akupuntur</option>
+                                <option value="Gurah">Gurah (THT/Pernapasan)</option>
+                                <option value="Ear Candle">Ear Candle</option>
+                                <option value="Moksa">Moksa (Therapy Warming)</option>
+                                <option value="Baby Massage">Baby Massage (Pijat Bayi)</option>
+                                <option value="Refleksi">Refleksi Saraf</option>
+                                <option value="Quantum Kehamilan">Quantum Kehamilan</option>
+                                <option value="PETEBE">PETEBE (Pembetulan Tulang Belakang)</option>
+                                <option value="Ruqyah Syar'iyyah">Ruqyah Syar'iyyah</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="gender-terapis" class="block text-xs font-bold text-gray-700 uppercase mb-1">Kategori Terapis / Jam Buka</label>
+                            <select id="gender-terapis" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand-green outline-none bg-white font-medium">
+                                <option value="Ikhwan (09.00 - 21.00 WIB)">👨🦰 Ikhwan / Pria (09.00 - 21.00 WIB)</option>
+                                <option value="Akhwat (09.00 - 17.00 WIB)">🧕 Akhwat / Wanita (09.00 - 17.00 WIB)</option>
+                                <option value="Anak / Baby">👶 Anak-anak / Baby Massage</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="tanggal" class="block text-xs font-bold text-gray-700 uppercase mb-1">Rencana Tanggal Berobat</label>
+                            <input type="date" id="tanggal" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand-green outline-none">
+                        </div>
+                        <div>
+                            <label for="jam" class="block text-xs font-bold text-gray-700 uppercase mb-1">Estimasi Jam Kedatangan</label>
+                            <select id="jam" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand-green outline-none bg-white font-medium">
+                                <option value="09:00 WIB">Pagi (09:00 WIB)</option>
+                                <option value="11:00 WIB">Siang (11:00 WIB)</option>
+                                <option value="14:00 WIB">Sore (14:00 WIB)</option>
+                                <option value="16:30 WIB">Sore (16:30 WIB)</option>
+                                <option value="19:00 WIB">Malam (19:00 WIB - Khusus Ikhwan)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="keluhan" class="block text-xs font-bold text-gray-700 uppercase mb-1">Keluhan Penyakit / Pegal</label>
+                        <textarea id="keluhan" rows="3" placeholder="Deskripsikan singkat keluhan fisik atau rasa sakit yang dirasakan..." class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand-green outline-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-red hover:bg-brand-darkred text-white font-extrabold py-4 rounded-xl transition duration-300 shadow-xl flex justify-center items-center gap-2 border border-rose-300 text-lg uppercase tracking-wide">
+                        <i class="fab fa-whatsapp text-2xl"></i> Kirim Booking via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimoni" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-red font-extrabold uppercase tracking-wider text-sm block mb-2">Testimoni Pasien</span>
+                <h2 class="text-3xl font-black text-brand-green mb-4">Pengalaman Berobat di Adz-Dzikro</h2>
+                <p class="text-gray-600">Alhamdulillah, banyak pasien yang merasakan kebugaran & kesembuhan setelah terapi.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-brand-green flex flex-col justify-between">
+                    <p class="text-gray-600 italic text-sm mb-6">"Alhamdulillah setelah bekam & sebat rotan di Adz-Dzikro, migrain dan pundak kaku hilang. Tempatnya bersih dan terapisnya ramah sekali."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 text-brand-green flex items-center justify-center font-bold">H</div>
+                        <div>
+                            <h4 class="font-extrabold text-gray-900 text-sm">Haji Syamsul</h4>
+                            <span class="text-xs text-brand-red font-semibold">Pasien Bekam & Sebat Rotan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-brand-red flex flex-col justify-between">
+                    <p class="text-gray-600 italic text-sm mb-6">"Anak saya sempat batuk dahak menumpuk, setelah gurah herbal di sini napasnya plong. Tempat terapi wanita juga terpisah aman."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-rose-100 text-brand-red flex items-center justify-center font-bold">I</div>
+                        <div>
+                            <h4 class="font-extrabold text-gray-900 text-sm">Ibu Siti Nurhaliza</h4>
+                            <span class="text-xs text-brand-green font-semibold">Pasien Terapi Gurah</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-brand-green flex flex-col justify-between">
+                    <p class="text-gray-600 italic text-sm mb-6">"Sakit pinggang karena kecetit terobati dengan terapi PETEBE. Terapisnya mengerti anatomi tubuh dengan baik."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 text-brand-green flex items-center justify-center font-bold">A</div>
+                        <div>
+                            <h4 class="font-extrabold text-gray-900 text-sm">Anisa Rahmawati</h4>
+                            <span class="text-xs text-brand-red font-semibold">Pasien Terapi PETEBE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="kontak" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <span class="text-brand-red font-extrabold uppercase tracking-wider text-sm block mb-2">Lokasi Klinik</span>
+                    <h2 class="text-3xl font-black text-brand-green mb-6">Kunjungi Rumah Sehat Adz-Dzikro</h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Silakan berkunjung langsung atau konsultasikan jadwal kedatangan Anda via WhatsApp.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-emerald-100 text-brand-green rounded-xl flex items-center justify-center text-xl flex-shrink-0 font-bold">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Alamat Lengkap</h4>
+                                <p class="text-sm font-semibold text-gray-800 mt-0.5">Klinik RSH Adz-Dzikro</p>
+                                <p class="text-sm text-gray-600 mt-0.5 leading-relaxed">
+                                    Bukit Cimanggu City (BCC), Blok R2A No. 3, RT.03/RW.10, Cibadak, Kec. Tanah Sereal, Kota Bogor, Jawa Barat 16166
+                                </p>
+                                <a href="https://share.google/JlBr5iOzeAiK4ART1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-2.5 px-3.5 py-1.5 bg-emerald-50 text-brand-green border border-emerald-300 hover:bg-brand-green hover:text-white rounded-lg text-xs font-bold transition shadow-sm">
+                                    <i class="fas fa-location-arrow"></i> Petunjuk Rute Google Maps
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-rose-100 text-brand-red rounded-xl flex items-center justify-center text-xl flex-shrink-0 font-bold">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Jam Operasional (Buka Setiap Hari)</h4>
+                                <p class="text-sm text-brand-green font-bold mt-0.5">👨🦰 Ikhwan (Pria): 09.00 - 21.00 WIB</p>
+                                <p class="text-sm text-brand-red font-bold mt-0.5">🧕 Akhwat (Wanita): 09.00 - 17.00 WIB</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-amber-100 text-brand-gold rounded-xl flex items-center justify-center text-xl flex-shrink-0 font-bold">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">WhatsApp Konsultasi</h4>
+                                <a href="https://wa.me/6285921194645" target="_blank" class="text-sm text-brand-green font-bold hover:underline mt-0.5 block">+62 859-2119-4645</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed & Foto Bangunan -->
+                <div class="space-y-4">
+                    <div class="rounded-2xl overflow-hidden shadow-xl border-4 border-brand-green h-[320px] lg:h-[320px]">
+                        <iframe title="Lokasi Klinik RSH Adz-Dzikro Bukit Cimanggu City Bogor" src="https://maps.google.com/maps?q=Klinik+RSH+Adz+Dzikro+Bukit+Cimanggu+City+Bogor&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="bg-emerald-50 p-3.5 rounded-2xl border-2 border-emerald-200 flex items-center gap-4 shadow-sm">
+                        <img src="assets/img/klinik-adz-dzikro.jpg" alt="Patokan Gedung Klinik Adz-Dzikro" class="w-20 h-20 rounded-xl object-cover border-2 border-brand-green flex-shrink-0 shadow">
+                        <div>
+                            <span class="text-xs font-black text-brand-red uppercase tracking-wider block">Patokan Gerbang Masuk</span>
+                            <p class="text-xs text-gray-700 leading-snug mt-0.5">
+                                Gapura beratap genteng hitam dengan spanduk merah <strong>"Rumah Sehat Herbal Adz Dzikro"</strong> di dalam komplek Bukit Cimanggu City Blok R2A No. 3.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Merah Tua & Hijau -->
+    <footer class="bg-gray-900 text-white pt-12 pb-8 border-t-8 border-brand-red">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/img/logo-adz-dzikro.png" alt="Logo Adz-Dzikro" class="w-12 h-12 rounded-full object-contain border-2 border-brand-gold bg-black shadow-md">
+                        <div>
+                            <span class="text-2xl font-black text-white block leading-tight">Adz-Dzikro</span>
+                            <span class="text-[10px] font-bold text-brand-gold tracking-widest uppercase block">RUMAH SEHAT HERBAL</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-sm mb-3 leading-relaxed">
+                        Rumah Sehat Herbal & Terapi Sunnah Thibbun Nabawi. Sehat Alami, Berkah, & Sesuai Syariat Islam.
+                    </p>
+                    <p class="text-xs text-gray-400 mb-3 flex items-start gap-2">
+                        <i class="fas fa-map-marker-alt text-brand-gold mt-1"></i>
+                        <span>Bukit Cimanggu City (BCC) Blok R2A No. 3, Tanah Sereal, Kota Bogor</span>
+                    </p>
+                    <p class="text-brand-gold font-bold text-sm">"SEHATKU LAFADZ DZIKIRKU"</p>
+                </div>
+
+                <div>
+                    <h4 class="font-extrabold text-brand-red mb-4 text-sm uppercase">Menu Utama</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#beranda" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="#tentang" class="hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="#layanan" class="hover:text-white transition">12 Layanan Terapi</a></li>
+                        <li><a href="#produk" class="hover:text-white transition">Produk Herbal</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-extrabold text-brand-red mb-4 text-sm uppercase">Media Sosial</h4>
+                    <a href="https://www.instagram.com/rsadzikro?exln=NmZ6MWlveWg2d2h3" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white font-bold px-4 py-2.5 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition duration-300 text-sm group">
+                        <i class="fab fa-instagram text-xl group-hover:rotate-6 transition-transform"></i>
+                        <span>@rsadzikro</span>
+                    </a>
+                    <p class="text-xs text-gray-400 mt-3 leading-relaxed">
+                        Ikuti Instagram resmi kami untuk update jadwal, edukasi pengobatan sunnah, dan testimoni pasien.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-800 text-center text-xs text-gray-500">
+                <p>&copy; 2026 Rumah Sehat Herbal Adz-Dzikro. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        function id(e) { return document.getElementById(e); }
+
+        // Toggle Mobile Menu
+        const mobileMenuBtn = id('mobile-menu-btn');
+        const mobileMenu = id('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on clicking any navigation link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // WhatsApp Order Button for Herbal Products
+        function orderWhatsApp(namaProduk) {
+            const noWa = "6285921194645";
+            const pesan = `Assalamu'alaikum, saya ingin memesan produk herbal: *${namaProduk}*. Mohon informasi ketersediaan stok & total biaya.`;
+            const url = `https://wa.me/${noWa}?text=${encodeURIComponent(pesan)}`;
+            window.open(url, '_blank');
+        }
+
+        // WhatsApp Reservation Form Submission
+        function submitBooking(e) {
+            e.preventDefault();
+            const nama = id('nama').value;
+            const telepon = id('telepon').value;
+            const layanan = id('layanan-pilihan').value;
+            const gender = id('gender-terapis').value;
+            const tanggal = id('tanggal').value;
+            const jam = id('jam').value;
+            const keluhan = id('keluhan').value;
+
+            const noWa = "6285921194645";
+            const text = `Assalamu'alaikum Admin Rumah Sehat Adz-Dzikro, saya ingin reservasi terapi:\n\n` +
+                `*Nama:* ${nama}\n` +
+                `*No HP/WA:* ${telepon}\n` +
+                `*Layanan:* ${layanan}\n` +
+                `*Pilihan Terapis:* ${gender}\n` +
+                `*Jadwal:* ${tanggal} (${jam})\n` +
+                `*Keluhan:* ${keluhan || '-'}\n\n` +
+                `Mohon konfirmasi ketersediaan jadwal. Terima kasih.`;
+
+            const url = `https://wa.me/${noWa}?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+        }
+
+        // Product Filter Logic
+        function filterProducts(btnElement, category) {
+            const cards = document.querySelectorAll('.product-card');
+            const btns = document.querySelectorAll('.filter-btn');
+
+            btns.forEach(b => {
+                b.classList.remove('bg-brand-green', 'text-white', 'active');
+                b.classList.add('bg-gray-100', 'text-gray-700');
+            });
+
+            if (btnElement) {
+                btnElement.classList.remove('bg-gray-100', 'text-gray-700');
+                btnElement.classList.add('bg-brand-green', 'text-white', 'active');
+            }
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
